@@ -1,35 +1,36 @@
-package src;
+package src.modelos;
 
-public class Pelicula {
-
-    private String nombrePelicula;
+public class Titulo {
+    private String titulo;
     private int fechaLanzamiento;
     private String sinopsis;
     private double calificacion;
     private boolean incluidoEnPlanBasico;
-    private static int numeroPeliculas = 0;
+    private int tiempoDuracionEnMinutos;
+    private static int numeroTitulos = 0;
 
    // Constructor
-    public Pelicula(String nombrePelicula, 
+    public Titulo(String titulo, 
     int fechaLanzamiento, 
     String sinopsis, 
     double calificacion,  
-    boolean incluidoEnPlanBasico){
-        this.nombrePelicula = nombrePelicula;
+    boolean incluidoEnPlanBasico,
+    int tiempoDuracionEnMinutos){
+        this.titulo = titulo;
         this.fechaLanzamiento = fechaLanzamiento;
         this.sinopsis = sinopsis;
         this.calificacion = calificacion;
         this.incluidoEnPlanBasico = incluidoEnPlanBasico;
-
-        numeroPeliculas++;
+        this.tiempoDuracionEnMinutos = tiempoDuracionEnMinutos;
+        numeroTitulos++;
    }
 
    // Metodos
-   public String getNombrePelicula(){
-    return nombrePelicula;
+   public String gettitulo(){
+    return titulo;
    }
-   public void setNombrePelicula(String nombrePelicula){
-    this.nombrePelicula = nombrePelicula;
+   public void settitulo(String titulo){
+    this.titulo = titulo;
    }
    public int getfechaLanzamiento(){
     return fechaLanzamiento;
@@ -55,18 +56,27 @@ public class Pelicula {
    public void setIncluidoEnPlanBasico(boolean incluidoEnPlanBasico){
     this.incluidoEnPlanBasico = incluidoEnPlanBasico;
    }
-   public static int getNumeroPeliculas(){
-    return numeroPeliculas;
+
+   public int getTiempoDuracionEnMinutos(){
+    return tiempoDuracionEnMinutos;
    }
 
-   // Metodo para calcular el promedio de las calificaciones
+   public void setTiempoDuracionEnMinutos(int tiempoDuracionEnMinutos){
+    this.tiempoDuracionEnMinutos = tiempoDuracionEnMinutos;
+   }
 
+   public static int getnumeroTitulos(){
+    return numeroTitulos;
+}
 
    // Metodo para mostrar informacion de la pelicula
    public void mostrarInformacion(){
-    System.out.println("Titulo: " + nombrePelicula + ".");
+    System.out.println("****** FICHA TECNICA ******");
+    System.out.println("Titulo: " + titulo + ".");
     System.out.println("Fecha de lanzamiento: " + fechaLanzamiento + ".");
     System.out.println("Calificacion: " + calificacion + ".");
+    System.out.println("Tiempo de duracion: " +  tiempoDuracionEnMinutos + " minutos.");
     System.out.println("Sinopsis: " + sinopsis + ".");
+    System.out.println("***************************");
    }
 }
